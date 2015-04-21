@@ -23,7 +23,6 @@ Vagrant.configure(2) do |config|
       pkg-config \
       git
     curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
-    source ~/.bashrc
     source ~/.nvm/nvm.sh
     nvm install 0.12
     echo "nvm use 0.12" >> ~/.bashrc
@@ -36,5 +35,7 @@ Vagrant.configure(2) do |config|
     npm_lazy --config ~/npm_lazy.config.js &
     npm config set registry http://localhost:8080/
     npm i -g ember-cli
+    ember new test-project
+    rm -rf test-project
   SHELL
 end
